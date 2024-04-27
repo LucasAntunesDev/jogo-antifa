@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: auto 0 0 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -12,4 +12,8 @@
 
 body {
     font-size: 1.6rem;
+}
+
+li{
+    list-style: lower-alpha;
 }
