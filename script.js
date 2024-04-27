@@ -33,9 +33,14 @@ form.addEventListener('submit', (event) => {
     console.log(questoes.map((q) => q.resposta))
     // console.log(form.value)
 
-    const resp = document.querySelector("#resposta-1")
-    console.log(document.querySelectorAll('.resposta')[0].checked)
-    document.querySelectorAll('.resposta').forEach((resp) => console.log(`${resp.value} está ativo? ${resp.checked}`))
+    const resposta = questoes[0].resposta
+    console.log(document.querySelectorAll('.resposta')[1].checked)
+    // document.querySelectorAll('.resposta').forEach((resp) => console.log(`${resp.value} está ativo? ${resp.checked}`))
+    const verificarAcerto = document.querySelectorAll('.resposta').forEach((resp) => {
+        resp === resposta && resp.checked ? true : false
+    })
+
+    console.log(verificarAcerto)
     // console.log(document.querySelectorAll('.resposta').map((r) => (r)))
 
     // alert(questoes[0].resposta)
