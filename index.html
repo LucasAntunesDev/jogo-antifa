@@ -9,12 +9,23 @@
 </head>
 
 <body>
-    <form action="#" method="post" id="form">
-        <label for="nome">Digite seu nome</label>
-        <input type="text" name="nome" id="nome">
 
-        <button type="submit">Jogar</button>
-    </form>
+    <main class="container half h-screen">
+        <div class="flex col gap-2 x-center my-4">
+            <img src="./assets/antifa-logo.png" alt="Logo do movimento Antifa" title="Logo Antifa" id="antifa-logo"
+                class="large-img">
+            <h1>Jogo <span>Antifa</span></h1>
+        </div>
+
+        <form action="#" method="post" id="nome-jogador-form" class="flex-col">
+            <div class="flex gap-1">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome">
+                <button type="submit">Jogar</button>
+            </div>
+
+        </form>
+    </main>
 
     <script src="salvarUsuario.js"></script>
 </body>

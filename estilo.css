@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
     margin: 0;
     padding: auto 0 0 0;
@@ -8,12 +10,174 @@
 
 :root {
     font-size: 62.5%;
+    --main: #1E1E1E;
+    --secundary: white;
+    --tertiary: crimson;
+    --text-1: var(--secundary);
+    --text-2: var(--tertiary);
+    --text-3: var(--main);
+    --transition: ease-in-out 300ms;
+    --rounded-md: 6px;
+    /* 6px */
+    --rounded-lg: 8px;
+    /* 8px */
+    --rounded-xl: 12px;
+    /* 12px */
 }
 
 body {
     font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--main);
+    color: var(--text-1);
 }
 
-li{
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+label {
+    font-family: "Press Start 2P", system-ui;
+}
+
+li {
     list-style: lower-alpha;
+}
+
+cite {
+    display: flex;
+    align-self: flex-end;
+}
+
+button {
+    background: var(--secundary);
+    border: none;
+    color: var(--text-3);
+    width: fit-content;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    border-radius: var(--rounded-md);
+    text-transform: uppercase;
+}
+
+button:hover {
+    color: var(--text-2);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:focus {
+    background: var(--tertiary);
+    color: var(--text-1);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+div#questao.questao {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.container>* {
+    width: 70%;
+    margin-inline: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#nome-jogador-form>div input {
+    width: 20rem;
+}
+
+input[type=text] {
+    background: transparent;
+    border: solid 2px var(--secundary);
+    color: var(--text-1);
+    outline: none;
+    border-radius: var(--rounded-md);
+    padding: 1rem;
+}
+
+input[type=text]:focus {
+    outline: var(--tertiary) solid 2px;
+}
+
+h1>span {
+    color: var(--text-2);
+}
+
+#antifa-logo.large-img {
+    width: 20rem;
+}
+
+.container.half {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.gap-4 {
+    gap: 4rem;
+}
+
+.gap-8 {
+    gap: 8rem;
+}
+
+.flex.col {
+    flex-direction: column;
+}
+
+.x-center {
+    margin-inline: center;
+}
+
+.y-center {
+    margin-block: center;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.w-screen {
+    height: 100vw;
+}
+
+.my-4{
+    margin-block: 4rem;
 }
