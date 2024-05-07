@@ -1,67 +1,105 @@
+const $ = (parametro) => {
+    return document.querySelector(parametro)
+}
+
 const questoes = [
     {
         questão: 1,
-        pergunta: 'Qual é a primeira letra do alfabeto?',
-        alternativas: ["a", "b", "c", "d"],
-        resposta: 'a',
+        pergunta: 'O nome Partido Nacional-Socialista dos Trabalhadores Alemãe significa que o Nazismo é de esquerda?',
+        alternativas: [
+            {número:  1, texto: 'Sim'},
+            {número:  2, texto: 'Não'},
+    ],
+        resposta: 2,
+        explicacacao: 'O sentido da palavra "socialista" usado pelos nazistas é diferente da usada por partidários de esquerda.'
     },
-    {
-        questão: 2,
-        pergunta: 'Qual é a segunda letra do alfabeto?',
-        alternativas: ["a", "b", "c", "d"],
-        resposta: 'c',
-    },
-    {
-        questão: 3,
-        pergunta: 'Qual é a terceira letra do alfabeto?',
-        alternativas: ["a", "b", "c", "d"],
-        resposta: 'c',
-    },
-    {
-        questão: 4,
-        pergunta: 'Qual é a quarta letra do alfabeto?',
-        alternativas: ["a", "b", "c", "d"],
-        resposta: 'd',
-    }
 ]
 
-const nomeUsuario = document.querySelector('#nome-usuario')
+const nomeUsuario = $('#nome-usuario')
 const usuario = localStorage.getItem('usuario')
 nomeUsuario.innerHTML = usuario != '' || usuario != null ? 'Usuário: ' + usuario : 'Usuário: '
 console.log(usuario)
 
-const form = document.querySelector("#form")
-form.addEventListener('submit', (event) => {
-    event.preventDefault()
+// Função para embaralhar as perguntas
+// const sortearQuestoes = () => {
+//     const numeroQuestoes = 5
 
-    console.log(questoes.map((q) => q.resposta))
-    // console.log(form.value)
+//     for (let i = 0; i <= 5; i++) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [questoes[i], questoes[j]] = [questoes[j], questoes[i]];
+//     }
+// };
 
-    const resposta = questoes[0].resposta
-    console.log(document.querySelectorAll('.resposta')[1].checked)
-    // document.querySelectorAll('.resposta').forEach((resp) => console.log(`${resp.value} está ativo? ${resp.checked}`))
-    const verificarAcerto = document.querySelectorAll('.resposta').forEach((resp) => {
-        resp === resposta && resp.checked ? true : false
-    })
+let questaoAtual = 0
+let acertos = 0
+$('#acertos').innerHTML = `Acertos: ${acertos}`
 
-    console.log(verificarAcerto)
-    // console.log(document.querySelectorAll('.resposta').map((r) => (r)))
+const exibirQuestao = () => {
+    const questao = questoes[questaoAtual]
+    $('#numero-questao').innerHTML = `Questão # ${questao.questão}`
+    $('#texto-questao').innerHTML = questao.pergunta
 
-    // alert(questoes[0].resposta)
-    // alert(document.querySelector(".resposta").value)
-})
+    const alternativasDiv = $('#alternativas')
 
-const montarAlternativas = (q) => {
-    const lista = document.querySelector('#lista')
-    document.querySelector('#resposta-1-label').innerHTML = q.alternativas[0]
-    document.querySelector('#resposta-2-label').innerHTML = q.alternativas[1]
-    document.querySelector('#resposta-3-label').innerHTML = q.alternativas[2]
-    document.querySelector('#resposta-4-label').innerHTML = q.alternativas[3]
+    questao.alternativas.forEach((alternativa) => {
+        const label = document.createElement('label');
+        label.innerHTML = `<span class="flex row w-fit questao-span hover"><input type="radio" name="resposta" value="${alternativa.número}"> ${alternativa.texto}</span>`
+        alternativasDiv.appendChild(label)
+    });
+};
 
-    document.querySelector('#resposta-1').value = q.alternativas[0]
-    document.querySelector('#resposta-2').value = q.alternativas[1]
-    document.querySelector('#resposta-3').value = q.alternativas[2]
-    document.querySelector('#resposta-4').value = q.alternativas[3]
-}
+const verificarResposta = () => {
+    const pergunta = questoes[questaoAtual]
 
-montarAlternativas(questoes[0])
+    const respostaUsuario = $('input[name="resposta"]:checked')
+    const mensagemErro = $('#erro').classList
+    mensagemErro.contains('hidden') ? mensagemErro.remove('hidden') : mensagemErro.add('hidden')
+
+    const resposta = $('#resposta')
+    const textoResposta = $('#texto-resposta')
+    textoResposta.innerHTML = pergunta.explicacacao
+    resposta.classList.toggle('hidden')
+
+    if (respostaUsuario) {
+        // $(input[type="checked"]).forEach((i) => {
+        //     i.disabled = true
+        // })   
+
+        const resposta = respostaUsuario.value
+        const condicao = pergunta.resposta == resposta
+        const resultado = condicao ? 1 : 0
+
+        console.log(respostaUsuario.parentElement)
+        condicao ? respostaUsuario.parentElement.classList.add('resposta-certa') : respostaUsuario.parentElement.classList.add('resposta-errada')
+
+        if (condicao) acertos++
+        $('#acertos').innerHTML = `Acertos: ${acertos}`
+
+        // Avança para a próxima questão ou finaliza o quiz
+        questaoAtual++
+        if (questaoAtual < questoes.length) exibirQuestao();
+        else {
+            const percentualAcertos = (acertos / questoes.length) * 100
+            
+            $('#responder-btn').classList.add('hidden')
+            // $('#questao').innerHTML = 'Fim do Quiz'
+            // $('#alternativas').innerHTML = ''
+            const questaoContainer =  $('#questao-container')
+
+            const btnFim = document.createElement('button')
+            btnFim.innerHTML = 'Finalizar jogo'
+            questaoContainer.appendChild(btnFim)
+
+            btnFim.addEventListener('click', () => {
+                questaoContainer.classList.add('hidden')
+                $('#jogo-stats').classList.remove('hidden')
+                $('#porcentagem-acertos').innerHTML = `Você acertou ${acertos} de ${questoes.length} questões (${percentualAcertos.toFixed(2)}%).`
+            })
+
+        }
+    } else {
+        $('#erro').classList.remove('hidden')
+    }
+};
+
+exibirQuestao()

@@ -5,45 +5,55 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' href='estilo.css'>
+    <link rel="shortcut icon" href="https://seeklogo.com/images/A/antifa-logo-EDFBE76119-seeklogo.com.png"
+        type="image/x-icon">
     <title>Jogo Antifa</title>
 </head>
 
 <body>
 
-    <a href="index.html">Início</a>
+    <body>
 
-    <main>
+        <div class="flex w-fit x-center my-2 gap-2">
+            <a href="index.html" class="text-secundary">Voltar ao início</a>
+            <span id="nome-usuario">Usuário: </span>
+            <a href="index.html" class="text-secundary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="white" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+            </a>
+            <span id="acertos">Acertos</span>
 
-        <span id="nome-usuario">Usuário: </span>
+            <img src="./assets/antifa-logo.png" alt="Logo do movimento Antifa" title="Logo Antifa" id="antifa-logo"
+                class="small-img">
+            <h1>Jogo <span>Antifa</span></h1>
 
-        <p id="pergunta">O que é fascismo?</p>
+        </div>
 
-        <form action="#" id="form">
-            <ol id="lista">
-                <li>
-                    <input type="radio" name="resposta" id="resposta-1" value="a class="resposta">
-                    <label for="resposta-1" id="resposta-1-label">a</label>
-                </li>
-                <li>
-                    <input type="radio" name="resposta" id="resposta-2" value="" class="resposta">
-                    <label for="resposta-2" id="resposta-2-label">b</label>
-                </li>
-                <li>
-                    <input type="radio" name="resposta" id="resposta-3" value="" class="resposta">
-                    <label for="resposta-3" id="resposta-3-label">c</label>
-                </li>
-                <li>
-                    <input type="radio" name="resposta" id="resposta-4" value="" class="resposta">
-                    <label for="resposta-4" id="resposta-4-label">d</label>
-                </li>
-            </ol>
+        <section id="jogo-stats" class="hidden">
+            <span id="porcentagem-acertos">10%</span>
+        </section>
 
-            <button type="submit">Responder</button>
-        </form>
+        <main class="container" id="questao-container">
+            <div class="" id="questao-div">
+                <span class="text-tertiary bold text-2xl" id="numero-questao">Questão #</span>
+                <p id="texto-questao" class="text-secundary"></p>
+            </div>
+            
+            <div id="resposta" class="flex col hidden">
+                <span class="text-tertiary bold text-2xl">Resposta</span>
+                <p id="texto-resposta" class="text-secundary"></p>
+            </div>
 
-    </main>
+            <span class="hidden text-tertiary" id="erro">Selecione uma alternativa!</span>
 
-    <script src='script.js'></script>
-</body>
+            <div id="alternativas"></div>
+            <button onclick="verificarResposta()" class="hover" id="responder-btn">Responder</button>
+            <!-- <div id="resultado"></div> -->
+        </main>
+
+        <script src="./script.js"></script>
+    </body>
 
 </html>
