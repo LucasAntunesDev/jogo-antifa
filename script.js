@@ -2,16 +2,30 @@ const $ = (parametro) => {
     return document.querySelector(parametro)
 }
 
+const $$ = (parametro) => {
+    return document.querySelectorAll(parametro)
+}
+
 const questoes = [
     {
         questão: 1,
-        pergunta: 'O nome Partido Nacional-Socialista dos Trabalhadores Alemãe significa que o Nazismo é de esquerda?',
+        pergunta: 'O nome Partido Nacional-Socialista dos Trabalhadores Alemães significa que o Nazismo é de esquerda?',
         alternativas: [
             {número:  1, texto: 'Sim'},
             {número:  2, texto: 'Não'},
     ],
         resposta: 2,
         explicacacao: 'O sentido da palavra "socialista" usado pelos nazistas é diferente da usada por partidários de esquerda.'
+    },
+    {
+        questão: 2,
+        pergunta: 'Por qual razão camadas da população consideradas moderadas, como partidos da direita tradicional e o empresariado apoiaram ideias tão radicais como as do fascismo?',
+        alternativas: [
+            {número:  1, texto: 'Medo do Comunismo'},
+            {número:  2, texto: 'Sei lá'},
+    ],
+        resposta: 1,
+        explicacacao: 'Ainda que muitos "torcessem o nariz" para os nazistas, consideravam um perigo maior o comunismo do que o nazismo. Ainda para alguns, era possível "domar" os nazistas, moderando-os.'
     },
 ]
 
@@ -73,17 +87,23 @@ const verificarResposta = () => {
         condicao ? respostaUsuario.parentElement.classList.add('resposta-certa') : respostaUsuario.parentElement.classList.add('resposta-errada')
 
         if (condicao) acertos++
+        // console.log($$('input[type=radio]').parentElement)
+        document.querySelectorAll('input[type=radio]').forEach(e => {
+            e.parentElement.classList.add('hidden')
+        })
+        // if (condicao) questaoAtual++
         $('#acertos').innerHTML = `Acertos: ${acertos}`
 
         // Avança para a próxima questão ou finaliza o quiz
         questaoAtual++
-        if (questaoAtual < questoes.length) exibirQuestao();
+        console.log(questoes.length)
+        if (questaoAtual < questoes.length) exibirQuestao()
         else {
             const percentualAcertos = (acertos / questoes.length) * 100
             
             $('#responder-btn').classList.add('hidden')
             // $('#questao').innerHTML = 'Fim do Quiz'
-            // $('#alternativas').innerHTML = ''
+            $('#alternativas').innerHTML = ''
             const questaoContainer =  $('#questao-container')
 
             const btnFim = document.createElement('button')
