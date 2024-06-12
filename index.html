@@ -4,30 +4,60 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel="stylesheet" href="estilo.css">
-    <title>Jogo Antifa - Início</title>
+    <!-- <link rel='stylesheet' href='estilo.css'> -->
+    <link rel="shortcut icon" href="https://seeklogo.com/images/A/antifa-logo-EDFBE76119-seeklogo.com.png"
+        type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Jogo Antifa</title>
 </head>
 
-<body>
+<body class="bg-neutral-900 text-zinc-50">
 
-    <main class="container half h-screen">
-        <div class="flex col gap-2 x-center my-4">
-            <img src="./assets/antifa-logo.png" alt="Logo do movimento Antifa" title="Logo Antifa" id="antifa-logo"
-                class="large-img">
-            <h1>Jogo <span>Antifa</span></h1>
+    <header class="flex items-center w-fit mx-auto my-4 gap-2">
+        <a href="index.html" class="text-secundary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+                class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+        </a>
+        <p id="acertos">Acertos</p>
+
+        <figure class="flex items-center gap-x-2 w-fit">
+            <h1 class="text-2xl font-bold">Jogo <span class="text-red-600">Antifa</span></h1>
+            <img src="./assets/antifa-logo.png" alt="Logo do movimento Antifa" title="Logo Antifa" id="antifa-logo" class="size-20">
+        </figure>
+
+    </header>
+
+    <section id="jogo-stats" class="hidden">
+        <span id="porcentagem-acertos">10%</span>
+    </section>
+
+    <section class="flex flex-col justify-center" id="questao-container">
+        <div class="px-4 py-2 mb-4" id="questao-div ">
+            <span class="font-bold text-2xl" id="numero-questao">Questão #</span>
+            <p id="texto-questao" class="text-secundary"></p>
         </div>
 
-        <form action="#" method="post" id="nome-jogador-form" class="flex-col">
-            <div class="flex gap-1">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome">
-                <button type="submit" class="hover">Jogar</button>
-            </div>
+        <div id="resposta" class="flex flex-col hidden px-4">
+            <span class="text-red-600 font-bold text-2xl">Resposta</span>
+            <p id="texto-resposta" class="text-secundary"></p>
+        </div>
 
-        </form>
-    </main>
+        <p class="hidden mx-auto font-bold text-red-600 mb-4 inline-flex gap-x-2" id="erro">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+              </svg>
+              Selecione uma alternativa!
+        </p>
 
-    <script src="salvarUsuario.js"></script>
+        <main id="alternativas" class="flex flex-col items-stretch gap-2 px-4"></main>
+
+        <button class="border-2 border-neutral-800 hover:bg-neutral-800 rounded-xl p-4 mx-auto my-4" id="responder-btn">Responder</button>
+        <!-- <div id="resultado"></div> -->
+    </section>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
