@@ -37,7 +37,7 @@ const questoes = [
       },
     ],
     resposta: 2,
-    explicacacao: `<strong>Resposta:</strong> NÃO. Para Hitler e seus partidários, 'socialismo' significa sociedade alemã. Além disso, o nome do partido também é contraditório se considerarmos o socialismo marxista, uma vez que esse é <strong>internacionalista</strong>`,
+    explicacacao: `<strong>NÃO.</strong> Para Hitler e seus partidários, 'socialismo' significa sociedade alemã. Além disso, o nome do partido também é contraditório se considerarmos o socialismo marxista, uma vez que esse é <strong>internacionalista</strong>`,
   },
   {
     questão: 2,
@@ -223,14 +223,14 @@ const carregarEstadoJogo = () => {
 }
 
 window.onload = () => {
-    // Certifique-se de que todas as questões estão carregadas
-    if (questoes.length > 0) {
-      carregarEstadoJogo();
-    } else {
-      // Se as questões ainda não estiverem carregadas, tente novamente após um breve intervalo
-      setTimeout(carregarEstadoJogo, 100);
-    }
+  // Certifique-se de que todas as questões estão carregadas
+  if (questoes.length > 0) {
+    carregarEstadoJogo()
+  } else {
+    // Se as questões ainda não estiverem carregadas, tente novamente após um breve intervalo
+    setTimeout(carregarEstadoJogo, 100)
   }
+}
 
 // Função para exibir a questão atual
 const exibirQuestao = () => {
@@ -268,15 +268,10 @@ const verificarResposta = () => {
   const pergunta = questoes[questaoAtual]
 
   const respostaUsuario = $('input[name="resposta"]:checked')
-  const mensagemErro = $("#erro")
-  mensagemErro.classList.contains("hidden")
-    ? mensagemErro.classList.remove("hidden")
-    : mensagemErro.classList.add("hidden")
-
-  const resposta = $("#resposta")
-  const textoResposta = $("#texto-resposta")
-  textoResposta.innerHTML = pergunta.explicacacao
-  resposta.classList.toggle("hidden")
+  //   const mensagemErro = $("#erro")
+  //   mensagemErro.classList.contains("hidden")
+  //     ? mensagemErro.classList.remove("hidden")
+  //     : mensagemErro.classList.add("hidden")
 
   if (respostaUsuario) {
     const resposta = respostaUsuario.value
@@ -288,12 +283,20 @@ const verificarResposta = () => {
       ? respostaUsuario.parentElement.classList.add("resposta-certa")
       : respostaUsuario.parentElement.classList.add("resposta-errada")
 
+    const respostaElement = $("#resposta")
+    const textoResposta = $("#texto-resposta")
+    textoResposta.innerHTML = pergunta.explicacacao
+
     if (condicao) {
       acertos++
-      alert("Resposta correta")
+      //   alert("Resposta correta")
+      textoResposta.innerHTML = "<p class='font-bold text-2xl'>Sua resposta está correta<p>" + pergunta.explicacacao
     } else {
-      alert("Resposta incorreta")
+      textoResposta.innerHTML = "<p class='font-bold text-2xl'>Sua resposta está incorreta<p>" + pergunta.explicacacao
+      //   alert("Resposta incorreta")
     }
+
+    respostaElement.classList.toggle("hidden")
 
     document.querySelectorAll("input[type=radio]").forEach((e) => {
       e.parentElement.classList.add("hidden")
@@ -343,7 +346,7 @@ const verificarResposta = () => {
     })
     salvarEstadoJogo()
   } else {
-    $("#erro").classList.remove("hidden")
+    // $("#erro").classList.remove("hidden")
   }
   salvarEstadoJogo()
 }
