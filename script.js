@@ -113,7 +113,7 @@ const questoes = [
       {
         número: 4,
         texto:
-          "d)  Devido à crise econômica que passou a assolar o páis, bem como pelo não comprimento de promessas da Tríplice Entente feitas quando de sua entrada no conflito",
+          "d)  Devido à crise econômica que passou a assolar o país, bem como pelo não comprimento de promessas da Tríplice Entente feitas quando de sua entrada no conflito",
       },
     ],
     resposta: 4,
@@ -278,11 +278,11 @@ const verificarResposta = () => {
       acertos++
       //   alert("Resposta correta")
       textoResposta.innerHTML =
-        "<p class='font-bold text-2xl'>Sua resposta está correta<p>" +
+        "<p class='font-bold text-2xl'>Sua resposta está <span class='text-emerald-500'>correta</span><p>" +
         pergunta.explicacacao
     } else {
       textoResposta.innerHTML =
-        "<p class='font-bold text-2xl'>Sua resposta está incorreta<p>" +
+        "<p class='font-bold text-2xl'>Sua resposta está <span class='text-red-600'>incorreta</span><p>" +
         pergunta.explicacacao
       //   alert("Resposta incorreta")
     }
