@@ -14,23 +14,27 @@
 <body class="bg-neutral-900 text-zinc-50">
 
     <header class="flex items-center w-fit mx-auto my-4 gap-2">
-        <a href="index.html" class="text-secundary">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
-                class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-            </svg>
-        </a>
         <p id="acertos">Acertos</p>
 
         <figure class="flex items-center gap-x-2 w-fit">
             <h1 class="text-2xl font-bold">Jogo <span class="text-red-600">Antifa</span></h1>
-            <img src="./assets/antifa-logo.png" alt="Logo do movimento Antifa" title="Logo Antifa" id="antifa-logo" class="size-20">
+            <img src="./assets/antifa-logo.png" alt="Logo do movimento Antifa" title="Logo Antifa" id="antifa-logo"
+                class="size-20">
         </figure>
 
     </header>
 
-    <section id="jogo-stats" class="hidden">
-        <span id="porcentagem-acertos">10%</span>
+    <section id="jogo-stats" class="hidden m-auto w-fit flex flex-col m-auto w-fit gap-4">
+        <span id="porcentagem-acertos" class="font-bold text-2xl"></span>
+        <button id="restart" class="flex gap-2 bg-zinc-50 text-neutral-900 hover:bg-zinc-200 rounded-xl p-4 mx-auto my-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd"
+                    d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
+                    clip-rule="evenodd" />
+            </svg>
+
+            Jogar novamente
+        </button>
     </section>
 
     <section class="flex flex-col justify-center" id="questao-container">
@@ -45,16 +49,18 @@
         </div>
 
         <p class="hidden mx-auto font-bold text-red-600 mb-4 inline-flex gap-x-2" id="erro">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-              </svg>
-              Selecione uma alternativa!
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+            </svg>
+            Selecione uma alternativa!
         </p>
 
-        <main id="alternativas" class="flex flex-col items-stretch gap-2 px-4"></main>
+        <main id="alternativas" class="flex flex-col items-stretch gap-2 px-4 md:w-11/12"></main>
 
-        <button class="border-2 border-neutral-800 hover:bg-neutral-800 rounded-xl p-4 mx-auto my-4" id="responder-btn">Responder</button>
-        <!-- <div id="resultado"></div> -->
+        <button class="border-2 border-neutral-800 hover:bg-neutral-800 rounded-xl p-4 mx-auto my-4"
+            id="responder-btn">Responder</button>
     </section>
 
     <script src="./script.js"></script>

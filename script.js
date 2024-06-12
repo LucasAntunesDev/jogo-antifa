@@ -44,16 +44,16 @@ const questoes = [
     pergunta:
       "O fascismo, geralmente, ganha força em um contexto muito específico, o de: ",
     alternativas: [
-      { número: 1, texto: "Estabilidade econômica e prosperidade." },
-      { número: 2, texto: "Democracias consolidadas e pacíficas." },
-      { número: 3, texto: "Crise econômica e insegurança social" },
+      { número: 1, texto: "a) Estabilidade econômica e prosperidade." },
+      { número: 2, texto: "b) Democracias consolidadas e pacíficas." },
+      { número: 3, texto: "c) Crise econômica e insegurança social" },
       {
         número: 4,
-        texto: "Períodos de alta imigração e diversidade cultural.",
+        texto: "d) Períodos de alta imigração e diversidade cultural.",
       },
       {
         número: 5,
-        texto: "Desenvolvimento tecnológico e avanços científicos.",
+        texto: "e) Desenvolvimento tecnológico e avanços científicos.",
       },
     ],
     resposta: 3,
@@ -65,11 +65,11 @@ const questoes = [
     pergunta:
       '"Um típico líder fascista possui várias características, excluindo: "',
     alternativas: [
-      { número: 1, texto: "Carisma e habilidade oratória" },
-      { número: 2, texto: "Nacionalismo exacerbado" },
-      { número: 3, texto: "Respeito aos direitos humanos" },
-      { número: 4, texto: "Culto à personalidade" },
-      { número: 5, texto: "Uso da propaganda para manipulação" },
+      { número: 1, texto: "a) Carisma e habilidade oratória" },
+      { número: 2, texto: "b) Nacionalismo exacerbado" },
+      { número: 3, texto: "c) Respeito aos direitos humanos" },
+      { número: 4, texto: "d) Culto à personalidade" },
+      { número: 5, texto: "e) Uso da propaganda para manipulação" },
     ],
     resposta: 3,
     explicacacao:
@@ -80,10 +80,10 @@ const questoes = [
     pergunta:
       "Qual parte da sociedade, receosa de uma “ameaça” comunista, sempre acaba apoiando os fascistas?",
     alternativas: [
-      { número: 1, texto: "Trabalhadores" },
-      { número: 2, texto: "Artistas" },
-      { número: 3, texto: "Grandes empresários e proprietários de terras" },
-      { número: 4, texto: "Intelectuais liberais" },
+      { número: 1, texto: "a) Trabalhadores" },
+      { número: 2, texto: "b) Artistas" },
+      { número: 3, texto: "c) Grandes empresários e proprietários de terras" },
+      { número: 4, texto: "d) Intelectuais liberais" },
     ],
     resposta: 3,
     explicacacao:
@@ -94,10 +94,10 @@ const questoes = [
     pergunta: "São características fascistas, exceto:",
     alternativas: [
       { número: 1, texto: 'Tentativa de resgate de um passado "glorioso' },
-      { número: 2, texto: "Militarismo" },
-      { número: 3, texto: "Anti-liberalismo" },
-      { número: 4, texto: "Irracionalismo" },
-      { número: 5, texto: "Autoritarismo" },
+      { número: 2, texto: "b) Militarismo" },
+      { número: 3, texto: "c) Anti-liberalismo" },
+      { número: 4, texto: "d) Irracionalismo" },
+      { número: 5, texto: "e) Autoritarismo" },
     ],
     resposta: 3,
     explicacacao: `Fascistas são capitalistas, no entanto defendem a intervenção do Estado da ecnonimia. Lembre-se: <strong>capitalismo não significa necessariamente liberalismo</strong>.`,
@@ -107,13 +107,13 @@ const questoes = [
     pergunta:
       "Por que a Itália, vencedora da Primeira Guerra Mundial, viu o fascismo tomar conta do país?",
     alternativas: [
-      { número: 1, texto: "Devido ao sucesso econômico pós-guerra." },
-      { número: 2, texto: "Devido à influência dos nazistas." },
-      { número: 3, texto: "Por uma forte tradição democrática." },
+      { número: 1, texto: "a) Devido ao sucesso econômico pós-guerra." },
+      { número: 2, texto: "b) Devido à influência dos nazistas." },
+      { número: 3, texto: "c) Por uma forte tradição democrática." },
       {
         número: 4,
         texto:
-          "Devido à crise econômica que passou a assolar o páis, bem como pelo não comprimento de promessas da Tríplice Entente feitas quando de sua entrada no conflito",
+          "d)  Devido à crise econômica que passou a assolar o páis, bem como pelo não comprimento de promessas da Tríplice Entente feitas quando de sua entrada no conflito",
       },
     ],
     resposta: 4,
@@ -125,10 +125,10 @@ const questoes = [
     pergunta:
       "Apesar da morte de Mussolini e Hitler e o consequente fim da Itália fascista e do terceiro Reich, em 1945, muitos regimes fascistas seguiram e surgiram após a Segunda Guerra Mundial, com exceção de:",
     alternativas: [
-      { número: 1, texto: "Chile de Augusto Pinochet" },
-      { número: 2, texto: "Iugoslávia do marechal Tito" },
-      { número: 3, texto: "Estado Novo portugês" },
-      { número: 4, texto: "Espanha de Francisco Franco" },
+      { número: 1, texto: "a) Chile de Augusto Pinochet" },
+      { número: 2, texto: "b) Iugoslávia do marechal Tito" },
+      { número: 3, texto: "c) Estado Novo portugês" },
+      { número: 4, texto: "d) Espanha de Francisco Franco" },
     ],
     resposta: 2,
     explicacacao: "A Iugoslávia era um regime socialista.",
@@ -141,32 +141,27 @@ const questoes = [
       {
         número: 1,
         texto:
-          "Os alemães defendiam uma política econômica liberal, enquanto os italianos a intervenção do Estado na economia",
+          "a) Os alemães defendiam uma política econômica liberal, enquanto os italianos a intervenção do Estado na economia",
       },
       {
         número: 2,
         texto:
-          "Os italianos buscavam a expensão de seu território, como forma de 'reviver' o antigo Imprério Romano. Já os alemães, não tinham ambições",
+          "b) Os italianos buscavam a expansão de seu território, como forma de 'reviver' o antigo Império Romano. Já os alemães, não tinham ambições expansionistas.",
       },
       {
         número: 3,
         texto:
-          "Os italianos buscavam a expensão de seu território, como forma de 'reviver' o antigo Imprério Romano. Já os alemães, não tinham ambições expansionistas.",
+          "c) Os italianos não tinham o antissemitismo como base de sua ideologia.",
       },
       {
         número: 4,
         texto:
-          "Os italianos não tinham o antissemitismo como base de sua ideologia.",
-      },
-      {
-        número: 4,
-        texto:
-          "Ainda que, alguns membros do partido pudessem ser eventualmente antissemitas, essa não era a ideologia do fascismo italiano, ao contrátio do Alemão.",
+          "d) O fascismo italiano surgiu antes da Primeira Guerra Mundial, enquanto o alemão apareceu após a Segunda Guerra Mundial",
       },
     ],
     resposta: 3,
     explicacacao:
-      'Ainda que tenha vencido a guerra, a Itália sofreu o que ficou conhecido como <span class="italic">"Vittoria mutilata"</span> (vitória mutilada), uma vez que não ganhou as compensações prometidas pelos aliados antes da guerra. Dessa forma, crescreu entre os italianos um sentimento de ressentimento com esses Estados.',
+      "Ainda que, alguns membros do partido pudessem ser eventualmente antissemitas, essa não era a ideologia do fascismo italiano, ao contrátio do Alemão",
   },
   {
     questão: 9,
@@ -176,39 +171,28 @@ const questoes = [
       {
         número: 1,
         texto:
-          "Porque essas potências estavam economicamente debilitadas e não tinham capacidade de intervir.",
+          "a) Porque essas potências estavam economicamente debilitadas e não tinham capacidade de intervir.",
       },
       {
         número: 2,
-        texto: "Porque acreditavam que Hitler traria estabilidade à região.",
+        texto: "b) Porque acreditavam que Hitler traria estabilidade à região.",
       },
-      { número: 3, texto: "Porque secretamente apoiavam o regime nazista" },
+      { número: 3, texto: "c) Porque secretamente apoiavam o regime nazista" },
       {
         número: 4,
         texto:
-          "No entreguerras, predominou uma 'política de apaziguamento', em que essas potências tentavam evitar uma nova guerra,ainda que isso significasse negligenciar os desmandos dos germânicos.",
+          "d) No entreguerras, predominou uma 'política de apaziguamento', em que essas potências tentavam evitar uma nova guerra,ainda que isso significasse negligenciar os desmandos dos germânicos.",
       },
     ],
     resposta: 4,
     explicacacao:
       "Além de, motivados pelo trauma da Primeira Guerra, quererem evitar novos conflitos similares, eles acreditavam que, deixando a Alemanha mais forte em aspecto bélico, ela iria atacar a União Soviética, algo desejado por eles.",
   },
-  // {
-  //     questão:'' ,
-  //     pergunta: '',
-  //     alternativas: [
-  //         { número: 1, texto: 'Medo do Comunismo' },
-  //         { número: 2, texto: 'Sei lá' },
-  //     ],
-  //     resposta: 1,
-  //     explicacacao: ''
-  // },
 ]
-// Definição inicial das variáveis de estado do jogo
+
 let questaoAtual = 0
 let acertos = 0
 
-// Função para salvar o estado do jogo no localStorage
 const salvarEstadoJogo = () => {
   localStorage.setItem("questaoAtual", questaoAtual)
   localStorage.setItem("acertos", acertos)
@@ -254,6 +238,9 @@ const exibirQuestao = () => {
 
 // Função para verificar a resposta selecionada pelo usuário
 const verificarResposta = () => {
+  //   $("#responder-btn").classList.add("hidden")
+  //   $("#responder-btn").disabled = true
+
   let nenhumaRespostaMarcada = 1
 
   document.querySelectorAll("input[type=radio]").forEach((r) => {
@@ -290,9 +277,13 @@ const verificarResposta = () => {
     if (condicao) {
       acertos++
       //   alert("Resposta correta")
-      textoResposta.innerHTML = "<p class='font-bold text-2xl'>Sua resposta está correta<p>" + pergunta.explicacacao
+      textoResposta.innerHTML =
+        "<p class='font-bold text-2xl'>Sua resposta está correta<p>" +
+        pergunta.explicacacao
     } else {
-      textoResposta.innerHTML = "<p class='font-bold text-2xl'>Sua resposta está incorreta<p>" + pergunta.explicacacao
+      textoResposta.innerHTML =
+        "<p class='font-bold text-2xl'>Sua resposta está incorreta<p>" +
+        pergunta.explicacacao
       //   alert("Resposta incorreta")
     }
 
@@ -313,10 +304,12 @@ const verificarResposta = () => {
       "bg-zinc-50 text-neutral-900 hover:text-red-600 rounded-xl p-4 mx-auto my-4"
     )
     proximoBtn.innerHTML =
-      questaoAtual < questoes.length ? "PRÓXIMO" : "Finalizar"
+      questaoAtual < questoes.length ? "Próximo" : "Finalizar"
     $("#questao-container").appendChild(proximoBtn)
 
     proximoBtn.addEventListener("click", () => {
+    if(document.querySelector("#responder-btn").classList.contains('hidden')) $("#responder-btn").classList.remove("hidden")
+      salvarEstadoJogo()
       proximoBtn.classList.add("hidden")
       textoResposta.innerHTML = ""
       $("#resposta").classList.contains("hidden")
@@ -333,6 +326,7 @@ const verificarResposta = () => {
 
         const btnFim = document.createElement("button")
         btnFim.innerHTML = "Finalizar jogo"
+        btnFim.setAttribute('class','flex gap-2 bg-zinc-50 text-neutral-900 hover:bg-zinc-200 rounded-xl p-4 mx-auto my-4')
         questaoContainer.appendChild(btnFim)
 
         btnFim.addEventListener("click", () => {
@@ -344,11 +338,9 @@ const verificarResposta = () => {
         })
       }
     })
-    salvarEstadoJogo()
   } else {
-    // $("#erro").classList.remove("hidden")
+    alert("Você deve selecionar uma alternativa")
   }
-  salvarEstadoJogo()
 }
 
 // Função para voltar à questão anterior
@@ -373,6 +365,15 @@ window.onload = () => {
 
 // Adiciona o ouvinte de evento para o botão de responder
 $("#responder-btn").addEventListener("click", verificarResposta)
+$("#responder-btn").addEventListener("click", () => {
+    $("#responder-btn").classList.add("hidden")
+})
 
 // Inicializa a exibição da questão
 exibirQuestao()
+
+$("#restart").addEventListener("click", () => {
+  localStorage.setItem("questaoAtual", 0)
+  localStorage.setItem("acertos", 0)
+  location.reload()
+})
